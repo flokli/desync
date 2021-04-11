@@ -24,7 +24,7 @@ type HTTPHandler struct {
 	compressed bool
 }
 
-// NewHTTPHandler initializes and returns a new HTTP handler for a chunks server.
+// NewHTTPHandler initializes and returns a new HTTP handler for a chunk server.
 func NewHTTPHandler(s Store, writable, skipVerifyWrite bool, converters Converters, auth string) http.Handler {
 	compressed := converters.hasCompression()
 	return HTTPHandler{HTTPHandlerBase{"chunk", writable, auth}, s, skipVerifyWrite, converters, compressed}
